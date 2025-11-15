@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<style >
+body{
+    background: black;
+    color: white;
+}
+h2{
+    color:white;
+    text-shadow:5px 1px #777;
+    text-align: center;
+}
+.name{
+    border: 4px solid blue;
+    border-style: double;
+}
+.card{
+    position: absolute;
+    margin-top:5px ;
+    width: 340px;
+    height: 310px;
+    background: linear-gradient(45deg,black,blue,gold);
+    margin-left: 5px;
+    
+}
+.big{
+    position:absolute ;
+    margin-top:70px ;
+  width: 350px;
+    height: 320px;
+    background:linear-gradient(45deg,blue,red,green) ; 
+    animation: spin 3s linear-infinite;
+    margin-left: 10px;
+    box-shadow: 0px 0px 20px  white;
+}
+@keyframes spin {
+    0%{
+        background-position:0 0 ;
+    }
+    50%{
+        background-position: 400% 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
+}
+#box{
+   font-size: 100px;
+   margin-top: 500px;
+   background: none;
+   border: none;
+   transition: 0;
+   margin-left: 85px;
+}
+select{
+    width: 200px;
+    color: white;
+    text-align: center;
+   margin-left: 70px;
+   height:70px ;
+   background: #272727;
+   border-radius: 30px;
+   font-size: 30px;
+   text-shadow: 2px 4px red;
+  
+   align-content: center;
+   box-shadow: 0px 0px 30px white;
+   border: 8px solid green;
+   
+}
+option{
+   background: none; 
+}
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+{
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	margin: 0;
+	padding: 0;
+	background: linear-gradient(
+		to right,
+		#008000,
+		#00e600,
+		#b3ffb3,
+		#00e600,
+		#008000
+	);
+	font-family: "Martel Sans", sans-serif;
+}
+
+h1 {
+	font-size: 5.25vmin;
+	text-align: center;
+	color: white;
+}
+p {
+	font-size: max(10pt, 2.5vmin);
+	line-height: 1.4;
+	color: #0e390e;
+	margin-bottom: 1.5rem;
+}
+
+.wrap {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	width: 85vmin;
+	height: 65vmin;
+	margin: 2rem auto;
+	border: 8px solid;
+	border-image: linear-gradient(
+			-50deg,
+			green,
+			#00b300,
+			forestgreen,
+			green,
+			lightgreen,
+			#00e600,
+			green
+		)
+		1;
+	transition: 0.3s ease-in-out;
+	position: relative;
+	overflow: hidden;
+}
+.overlay {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	padding: 1rem 0.75rem;
+	background:linear-gradient(4deg,black,red,black);
+	transition: 0.4s ease-in-out;
+	z-index: 1;
+}
+.overlay-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 15vmin;
+	height: 100%;
+	padding: 0.5rem 0 0 0.5rem;
+	border: 3px solid;
+	border-image: linear-gradient(
+			to bottom,
+			#aea724 5%,
+			forestgreen 35% 65%,
+			#aea724 95%
+		)
+		0 0 0 100%;
+	transition: 0.3s ease-in-out 0.2s;
+	z-index: 1;
+}
+.image-content {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60vmin;
+	height: 100%;
+	background-image: url("love.jpg");
+	background-size: cover;
+	transition: 0.3s ease-in-out;
+	/* border: 1px solid green; */
+}
+
+.inset {
+	max-width: 50%;
+	margin: 0.25em 1em 1em 0;
+	border-radius: 0.25em;
+	float: left;
+}
+
+.dots {
+	position: absolute;
+	bottom: 1rem;
+	right: 2rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	width: 70px;
+	height: 4vmin;
+	transition: 0.3s ease-in-out 0.3s;
+}
+.dot {
+	width: 1rem;
+	height: 1rem;
+	background: yellow;
+	border: 1px solid indigo;
+	border-radius: 50%;
+	transition: 0.3s ease-in-out 0.3s;
+}
+
+.text {
+	display: grid;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60vmin;
+	height: 100%;
+	padding: 3vmin 4vmin;
+	background: #fff;
+	box-shadow: inset 1px 1px 15px 0 rgba(0 0 0 / 0.4);
+	overflow-y: scroll;
+}
+.tree {
+	place-self: center;
+	width: calc(50px + 2vw);
+}
+
+.wrap:hover .overlay {
+	transform: translateX(-60vmin);
+}
+.wrap:hover .image-content {
+	width: 30vmin;
+}
+.wrap:hover .overlay-content {
+	border: none;
+	transition-delay: 0.2s;
+	transform: translateX(60vmin);
+}
+.wrap:hover .dots {
+	transform: translateX(1rem);
+}
+.wrap:hover .dots .dot {
+	background: white;
+}
+
+/* Animations and timing delays */
+.animate {
+	animation-duration: 0.7s;
+	animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+	animation-fill-mode: backwards;
+}
+/* Pop In */
+.pop {
+	animation-name: pop;
+}
+@keyframes pop {
+	0% {
+		opacity: 0;
+		transform: scale(0.5, 0.5);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1, 1);
+	}
+}
+
+/* Slide In */
+.slide {
+	animation-name: slide;
+}
+@keyframes slide {
+	0% {
+		opacity: 0;
+		transform: translate(4em, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+
+/* Slide Left */
+.slide-left {
+	animation-name: slide-left;
+}
+@keyframes slide-left {
+	0% {
+		opacity: 0;
+		transform: translate(-40px, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+
+.slide-up {
+	animation-name: slide-up;
+}
+@keyframes slide-up {
+	0% {
+		opacity: 0;
+		transform: translateY(3em);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.delay-1 {
+	animation-delay: 0.3s;
+}
+.delay-2 {
+	animation-delay: 0.6s;
+}
+.delay-3 {
+	animation-delay: 0.9s;
+}
+.delay-4 {
+	animation-delay: 1.2s;
+}
+.delay-5 {
+	animation-delay: 1.5s;
+}
+.delay-6 {
+	animation-delay: 1.8s;
+}
+.delay-7 {
+	animation-delay: 2.1s;
+}
+.delay-8 {
+	animation-delay: 2.4s;
+}
+
+
+
+.heart {
+  font-size: 6em;
+  position: relative;
+}
+
+.heartbeat {
+  position: relative;
+  z-index: 1;
+  animation: beat 2s linear infinite;
+}
+
+.heartecho {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  animation: echo 2s linear infinite;
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(0.9);
+  }
+  21% {
+    transform: scale(1.1) skew(0.004turn)
+  }
+  28% {
+    transform: scale(1) skew(0.008turn);
+  }
+  35% {
+    transform: scale(1) skew(0)
+  }
+}
+
+@keyframes echo {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  14% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+  21% {
+    opacity: 0.4;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3);
+  }
+}
+
+.block {
+	position: relative;
+	margin: 100px auto 0;
+	width: 350px;
+	height: 250px;
+	background: linear-gradient(0deg, #000, #272727);
+}
+
+.block:before, .block:after {
+	content: '';
+	position: absolute;
+	left: -2px;
+	top: -2px;
+	background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+		#0000ff, #00ff00,#ffff00, #ff0000);
+	background-size: 400%;
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	z-index: -1;
+	animation: steam 20s linear infinite;
+}
+
+@keyframes steam {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.block:after {
+	filter: blur(50px);
+}
+@import url(https://fonts.googleapis.com/css?family=Concert+One);
+
+h1 {
+  animation:glow 10s ease-in-out infinite;
+  
+  
+
+/* For less laggy effect, uncomment this:
+  
+  animation:none;
+  -webkit-text-stroke:1px #fff; 
+  
+=========== */
+  
+}
+
+
+
+* { box-sizing:border-box; }
+
+
+}
+
+figure {
+  animation:wobble 5s ease-in-out infinite;
+  transform-origin:center center;
+  transform-style:preserve-3d;
+}
+
+@keyframes wobble {
+  0%,100%{ transform:rotate3d(1,1,0,40deg); }
+  25%{ transform:rotate3d(-1,1,0,40deg); }
+  50%{ transform:rotate3d(-1,-1,0,40deg); }
+  75%{ transform:rotate3d(1,-1,0,40deg); }
+}
+
+h1 {
+  display:block;
+  width:70%;
+  height:20px;
+  line-height:1.5;
+  font:900 2em 'Concert One', sans-serif;
+  text-transform:uppercase;
+  position:absolute;
+  color:#0a0a0a;
+}
+
+@keyframes glow {
+  0%,100%{ text-shadow:0 0 30px red; }
+  25%{ text-shadow:0 0 30px orange; }
+  50%{ text-shadow:0 0 30px forestgreen; }
+  75%{ text-shadow:0 0 30px cyan; }
+}
+
+h1:nth-child(2){ transform:translateZ(5px); }
+h1:nth-child(3){ transform:translateZ(10px);}
+h1:nth-child(4){ transform:translateZ(15px); }
+h1:nth-child(5){ transform:translateZ(20px); }
+h1:nth-child(6){ transform:translateZ(25px); }
+h1:nth-child(7){ transform:translateZ(30px); }
+h1:nth-child(8){ transform:translateZ(35px); }
+h1:nth-child(9){ transform:translateZ(40px); }
+h1:nth-child(10){ transform:translateZ(45px); }
+.link{
+    padding:100px;
+    background: linear-gradient(cyan,black,white,blue);
+    margin-top: 100px;
+}
+.mybutton{
+    height: 50px;
+    border: 4px solid #ffcd00;
+    border-radius: 15px;
+    background:linear-gradient(blue, red);
+    padding-left: 20px;
+    color: white;
+    box-shadow: 3px 10px 2px black;
+}
+.mybutton:hover{
+    background: green;
+    color: blue;
+}
+    </style>
+<body>
+<div class="name">
+    <h2><b>💖💝♥️MY LOVE💖💝♥️</b></h2>
+    
+</div>
+<marquee >💖💝💖💝🥰😍😘💖💝♥️😍🥰💖💝💝💖💝💖💝🥰😍😘💖💝♥️😍🥰💖💝💝</marquee>
+<div class="big">
+    
+
+<div class="card">
+    <h3>choose your favorite word</h3>
+    <select>
+        <option>I miss you</option>
+         <option>I LOVE you</option>
+          <option>I like you</option>
+           <option>I don forget you</option>
+
+
+
+
+    </select>
+    
+    
+</div>
+</div>
+  
+<div class="msg">
+
+<button id="box" onclick="btn()">📩</button>
+</div>
+<video src="amir.mp4" height="300px" width="300px" controls=autoplay">
+    <source src="amir.mp4" type="amir/mp4" />
+</video>
+   <div class="wrap animate pop">
+	<div class="overlay">
+		<div class="overlay-content animate slide-left delay-2">
+			<h2 class="animate slide-left pop delay-4">MY LOVE</h2>
+			<p class="animate slide-left pop delay-5" style="color: white; margin-bottom: 2.5rem;">LETTER TO: <em>MARYAM</em></p>
+		</div>
+		<div class="image-content animate slide delay-5"></div>
+		<div class="dots animate">
+			<div class="dot animate slide-up delay-6"></div>
+			<div class="dot animate slide-up delay-7"></div>
+			<div class="dot animate slide-up delay-8"></div>
+		</div>
+	</div>
+	<div class="text">
+		<p><img class="inset" src="love.jpg" alt="" />Daga ranar da na fara ganin ki ,sai naji araina nayi dacen mata, saboda yadda na yaba da hankalinki da nutsuwa,zuciyata tace wannan ita ce wadda ka dade kake nema. <em>MARYAM</em> tunda nake ban taba tunanin zanyi budurwa wannan lokacin ,sai gashi lokaci daya na chanza  </p>
+		<h3 style="color:red;">Nayi dace</h3>
+		<p>Maryam please-i need to marry me😘
+		</p>
+		
+		<p>Na yadda komai hadin Allah ne yau gashi na samu muradina, wadda halin mu yazo daya kuma wadda ta ke da biyayya.
+		A suffar macen da nake so na aura ko daya baki cire ba,duka kin hada su.
+		I dan zanta magana akan yadda kike to zan iya karar da ruwan biro na duniya ,saboda suffarki baza ta zaiyanu ba a takarda.</p>
+		<img class="tree" src="love.jpg" alt="" />
+		<p>ina godewa Allah sarki da ya nuna min matar da zan aura</p>
+		
+	</div>
+</div>
+
+<div class="block">
+<div class="heart">
+  <div class="heartbeat">❤️</div>
+  <div class="heartecho">❤️</div>
+</div><audio src="maryam.aac" width="60px" controls>
+    <source  src="maryam.aac" type="maryam/mp3" />
+</audio></block>
+<figure>
+  <h1>MARYAM</h1>
+  <h1>MARYAM</h1>
+  <h1>MARYAM</h1>
+  <h1>MARYAM</h1>
+  <h1>MARYAM</h1>
+  <h1>MARYAM</h1>
+  <h1>MARYAM</h1>
+  <h1>MARYAM</h1>
+  <h1>MARYAM</h1>
+  <h1>MARYAM</h1>  
+</figure>
+<div class="link">
+<h2>click this buttom to see my videos</h2>
+<button class="mybutton" onclick="mybtn()">VIEW MY VIDEOS</button>
+</div>
+
+<script>
+function btn(){
+    document.getElementById('box').innerHTML="💌";
+    
+}
+function mybtn(){
+alert("thank you my love");
+window.location.href="video.html";
+}
+</script>
+</body>
+</html>

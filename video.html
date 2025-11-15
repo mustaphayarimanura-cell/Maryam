@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<style >
+body{
+    border:3px solid black;
+    background:linear-gradient(red,blue,yellow) ;
+}
+img{
+    width: 355px;
+    height: 355px;
+    border-radius: 50%;
+    border: 10px solid blue;
+    border-style: double;
+}
+.image{
+    background: linear-gradient(cyan,blue);
+    
+}
+.name{
+    border: 3px solid red;
+    border-style: dotted;
+    text-align: center;
+    margin:30px  0 ;
+    background:linear-gradient(45deg,black,red);
+    border-top-left-radius: 50px;
+    border-bottom-right-radius:50px ;
+    
+}
+h2{
+    font-size: 26px;
+    text-shadow: 2px 2px red ;
+    box-shadow:0px 0px 50px black;
+    color: white;
+    
+}
+.video{
+    border: 3px solid white;
+    border-radius: 10px;
+    border-style: dashed;
+    margin: 20px 0;
+    background: linear-gradient(45deg,cyan,black);
+}
+.video:hover{
+    background: linear-gradient(45deg,black,yellow);
+}
+video{
+    margin-right: ;
+    margin-left: 90px;
+    border-radius: 20px;
+}
+button{
+    color: white;
+    margin: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    background: linear-gradient(45deg,red,cyan);
+}
+button:hover{
+    background:linear-gradient(yellow,black) ;
+}
+/* Basic Reset and Footer Styling */
+footer {
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text */
+    padding: 40px 0 0; /* Top padding, no bottom padding yet */
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px; /* Limit footer width */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px 40px; /* Horizontal padding and bottom padding */
+    display: flex; /* Enable Flexbox for horizontal layout */
+    flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
+    justify-content: space-between; /* Space out the sections */
+}
+
+/* Styling for each section */
+.footer-section {
+    width: 100%; /* Default to full width on mobile */
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    border-bottom: 2px solid #555; /* Subtle separator */
+    padding-bottom: 5px;
+}
+
+/* Styling for quick links */
+.footer-section.links ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+}
+
+.footer-section.links ul li a {
+    color: #ccc; /* Light gray links */
+    text-decoration: none; /* Remove underline */
+    display: block; /* Make the whole area clickable */
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.footer-section.links ul li a:hover {
+    color: #007bff; /* Hover color */
+}
+
+/* Styling for contact and social media */
+.footer-section p {
+    margin-bottom: 8px;
+    color: #ccc;
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 15px; /* Space between links */
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #007bff;
+}
+
+/* Copyright Bar */
+.footer-bottom {
+    text-align: center;
+    padding: 15px 20px;
+    border-top: 1px solid #444; /* Separator line */
+    background-color: #222; /* Slightly darker background for the bottom bar */
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+/* Media Query for larger screens (e.g., tablet and desktop) */
+@media (min-width: 768px) {
+    .footer-section {
+        width: 30%; /* Approximately one-third width */
+    }
+}
+
+    </style>
+<body>
+<div class="image">
+    <img src="my.jpg" alt="" />
+    <div class="name">
+        <h2><b></b>NURA MUSTAPHA YARIMA</b></h2>
+    </div>
+</div>
+<div class="video">
+    <h2 >I AM HAPPY</h2>
+    <video src="1.mp4" height="300px" width="200px" controls=autoplay">
+    <source src="1.mp4" type="1/mp4" />
+</video>
+</div>
+
+<div class="video">
+<h2>PROGRAMMER</h2> 
+<video src="2.mp4" height="300px" width="200px" controls=autoplay">
+    <source src="2.mp4" type="2/mp4" />
+</video>
+</div>
+<div class="video">
+    <h2 >ENGINEER</h2>
+<video src="3.mp4" height="300px" width="200px" controls=autoplay">
+    <source src="3.mp4" type="3/mp4" />
+</video>
+</div>
+
+<footer>
+    <div class="footer-container">
+
+        <div class="footer-section links">
+            <h3>Quick Links</h3>
+            <ul>
+              <a href="index.html"> <button>🔙Back</a></button></a>
+            
+                <button><a href="https://nura-mustapha-yarima.hopp.site/">Services</a></button>
+                
+            </ul>
+        </div>
+
+        <div class="footer-section contact">
+            <h3>Contact me</h3>
+            <p>Email: nuramustaphayarima28@gmail.com</p>
+            <p>Phone: (+234) 90658-40689</p>
+            <p>Address: karkarna,bakin kasuwa,yarimawa</p>
+        </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Nura Mustapha Yarima. All Rights Reserved.</p>
+    </div>
+</footer>
+
+
+</body>
+</html>
